@@ -90,4 +90,39 @@ some_values
 length(some_values) # length of the vector
 str_length(some_values) # length of each element in the vector
 ```
+## Indexing
+
+```{r}
+x <- c(6,5,1,2,3,4)
+x[3]
+```
+
+```{r}
+x[4] <- 15
+x
+```
+Assignement can be understood as a value semantic assignement: 'x' and 'y' are different vectors with the same initial content.
+
+```{r}
+y <- x
+y
+```
+
+Therefore, modifying 'x' has no effect on 'y'
+```{r}
+x[1] <- 18
+x
+y
+```
+
+```{r}
+x
+x[c(2,2,1,4,3)]
+```
+```{r}
+x[0]
+x[7]
+x[10]
+```
+
 
