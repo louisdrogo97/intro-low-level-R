@@ -45,6 +45,7 @@ class(1L) # integer
 ```
 ## Vector
 
+### Introduction
 Many things in R are vectors (and most of the other things are lists).
 A vector is a collection of values of the same type (possibly a single value).
 
@@ -61,5 +62,32 @@ y
 typeof(y)
 y[2]
 length(y)
+```
+### Character vectors
+
+This is not R strength...
+
+```{r}
+z <- "alice"
+length(z)  # 1
+```
+Salvation comes from 'stringr' package.
+
+```{r}
+library(stringr)
+```
+
+```{r}
+str_length(z)  # 5
+```
+```{r}
+char <- "😂😂😇"
+str_length(char)
+```
+```{r}
+some_values <- c("😂😂😇", "test")
+some_values
+length(some_values) # length of the vector
+str_length(some_values) # length of each element in the vector
 ```
 
