@@ -113,3 +113,91 @@ y
 y[c(TRUE, FALSE, TRUE)]
 ```
 
+## List 
+
+Vectors must be type uniform, xhich will triger a conversion to character in many cases.
+```{r}
+broken <- c(1L,1.5,"toto",FALSE)
+broken
+typeof(broken)
+```
+
+Lists do not have this limitation.
+
+### Creating a list
+
+```{r}
+bis <- list(1L,1.5,"toto",FALSE)
+bis
+typeof(bis)
+```
+
+```{r}
+foo <- list(c(1,2,3),TRUE, length)
+foo
+typeof(foo)
+```
+### Indexing
+
+```{r}
+foo
+cat("###\n")
+foo[1]
+cat("###\n")
+foo[-2]
+cat("###\n")
+foo[c(3,2,2,1)]
+```
+
+```{r}
+foo[0]
+foo[4]
+```
+
+
+### Side step: weird values
+
+```{r}
+NA # missing value
+NULL # missing object
+NaN # Not a Number
+```
+```{r}
+0/0
+1/0
+-1/0
+1/0-1/0
+1/0+1
+1/0-10^100
+1/Inf
+```
+```{r}
+NA_real_+1
+1/NA_real_
+```
+
+```{r}
+NULL +1
+1/NULL
+```
+
+
+### Back to indexing lists
+
+```{r}
+x <- list(c(1,2,3),c(TRUE,FALSE),LETTERS[10:15])
+x
+```
+
+
+```{r}
+x[3] <- list(c(-2,1))
+x
+```
+
+```{r}
+y <- c(1,2,3)
+y
+y[4] <- "toto"
+y
+```
