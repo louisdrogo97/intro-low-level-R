@@ -124,5 +124,28 @@ x[0]
 x[7]
 x[10]
 ```
+## List 
 
+Vectors must be type uniform, xhich will triger a conversion to character in many cases.
+```{r}
+broken <- c(1L,1.5,"toto",FALSE)
+broken
+typeof(broken)
+```
+
+Lists do not have this limitation.
+
+### Creating a list
+
+```{r}
+bis <- list(1L,1.5,"toto",FALSE)
+bis
+typeof(bis)
+```
+
+```{r}
+foo <- list(c(1,2,3),TRUE, length)
+foo
+typeof(foo)
+```
 
