@@ -51,5 +51,36 @@ length(y)
 ```{r}
 c(x,y)
 ```
+### Character vectors
+
+This is not R strength...
+```{r}
+z <- "Alice"
+length(z)
+```
+Salvation comes from the 'sting' package.
+```{r}
+library(stringr)
+```
+```{r}
+str_length(z)
+```
+```{r}
+complicated <- "😂😊😒😁"
+complicated
+length(complicated)
+str_length(complicated)
+```
+```{r}
+some_values <-c("😂😊😒😁","R是一门很好的编程语言","alice")
+some_values
+length(some_values)
+str_length(some_values)
+str_to_upper(some_values)
+
+```
+
+
+
 
 
