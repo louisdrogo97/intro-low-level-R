@@ -146,8 +146,31 @@ x
 x[c(2,10)] <-c(123,78)
 x
 ```
+## Lists
+vectors must be type uniform, which will trigger a conversation to character in many cases.
+```{r}
+broken <- c(1L, 1.5, "toto", FALSE)
+broken
+typeof(broken)
+```
+Lists do not have this limitation.
+### Creating a list
 
+```{r}
+bar <- list(1L, 1,5, "toto",FALSE)
+bar
+```
+```{r}
+typeof(bar)
+length(bar)
+```
 
+A list can be understood as a vector of vectors.
+```{r}
+foo <- list(c(1,2,3),TRUE,length)
+foo
+length(foo)
+```
 
 
 
