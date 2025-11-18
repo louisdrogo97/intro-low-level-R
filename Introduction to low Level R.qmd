@@ -79,6 +79,84 @@ str_length(some_values)
 str_to_upper(some_values)
 
 ```
+### Indexing
+```{r}
+x <- c(6,5,1,2,3,4)
+x[3]
+```
+```{r}
+x[4] <- 15
+x
+```
+Assignment can be understood has a value semantic assignment: 'x' and 'y' are diffenrent vectors with the same initial content.
+```{r}
+y <- x
+y
+```
+Therefore, modifying 'x' has no effect on 'y'
+```{r}
+x[1] <- 18
+x
+y
+```
+Indexing is made with vectors of 
+```{r}
+x
+x[c(2,2,1,4,3)]
+
+```
+```{r}
+x[0] ## no possible meaning -> empty numeric vector
+x[7] ## no value
+x[10]
+```
+```{r}
+typeof(numeric(0))
+length(numeric(0))
+```
+```{r}
+typeof(NA)
+length(NA)
+```
+```{r}
+typeof(NA_integer_)
+NA_integer_
+```
+```{r}
+x
+x[c(4,1,0,15)]
+```
+```{r}
+c(numeric(0),5, numeric(0))
+```
+```{r}
+x
+x[c(-1,-4)]
+```
+
+```{r}
+y <- c("A","B","C")
+y
+y[c(TRUE,FALSE,TRUE)]
+```
+```{r}
+x
+x[c(1,4)] <-c(-34,42)
+x
+x[c(2,10)] <-c(123,78)
+x
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
 
