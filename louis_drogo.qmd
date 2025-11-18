@@ -5,3 +5,43 @@ format: html
 editor: visual
 ---
 
+```{r}
+#| message: false
+library(here)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+here::i_am("intro-low-level-R.Rproj")
+```
+
+
+## Types and classes
+
+### Types
+
+```{r}
+typeof(1.5) # double
+typeof("test") # character
+typeof(TRUE) # logical
+typeof(1L) # integer
+typeof(1) # double
+typeof(typeof) # closure : it's a function essentially
+typeof(list()) # list
+```
+
+Every numbers are considered as double unless you specify it's an integer.
+
+
+### Classes
+
+```{r}
+data(iris)
+typeof(iris) # list
+class(iris) # data frame
+
+class(1) # numeric
+class(1L) # integer
+```
+
+
