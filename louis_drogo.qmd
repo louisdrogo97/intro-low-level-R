@@ -15,7 +15,6 @@ library(tidyr)
 here::i_am("intro-low-level-R.Rproj")
 ```
 
-
 ## Types and classes
 
 ### Types
@@ -32,7 +31,6 @@ typeof(list()) # list
 
 Every numbers are considered as double unless you specify it's an integer.
 
-
 ### Classes
 
 ```{r}
@@ -43,11 +41,12 @@ class(iris) # data frame
 class(1) # numeric
 class(1L) # integer
 ```
+
 ## Vector
 
 ### Introduction
-Many things in R are vectors (and most of the other things are lists).
-A vector is a collection of values of the same type (possibly a single value).
+
+Many things in R are vectors (and most of the other things are lists). A vector is a collection of values of the same type (possibly a single value).
 
 ```{r}
 w <- 15.25
@@ -56,6 +55,7 @@ w[1]
 ```
 
 The c-function can be seen as a creation function or, more accurately, as a vector concatenation function.
+
 ```{r}
 y <- c(1,-2,45,1.5,-1e-10)
 y
@@ -63,6 +63,7 @@ typeof(y)
 y[2]
 length(y)
 ```
+
 ### Character vectors
 
 This is not R strength...
@@ -71,6 +72,7 @@ This is not R strength...
 z <- "alice"
 length(z)  # 1
 ```
+
 Salvation comes from 'stringr' package.
 
 ```{r}
@@ -80,16 +82,19 @@ library(stringr)
 ```{r}
 str_length(z)  # 5
 ```
+
 ```{r}
 char <- "😂😂😇"
 str_length(char)
 ```
+
 ```{r}
 some_values <- c("😂😂😇", "test")
 some_values
 length(some_values) # length of the vector
 str_length(some_values) # length of each element in the vector
 ```
+
 ## Indexing
 
 ```{r}
@@ -101,6 +106,7 @@ x[3]
 x[4] <- 15
 x
 ```
+
 Assignement can be understood as a value semantic assignement: 'x' and 'y' are different vectors with the same initial content.
 
 ```{r}
@@ -109,6 +115,7 @@ y
 ```
 
 Therefore, modifying 'x' has no effect on 'y'
+
 ```{r}
 x[1] <- 18
 x
@@ -119,11 +126,13 @@ y
 x
 x[c(2,2,1,4,3)]
 ```
+
 ```{r}
 x[0]
 x[7]
 x[10]
 ```
+
 ## List 
 
 Vectors must be type uniform, xhich will triger a conversion to character in many cases.
@@ -212,5 +221,6 @@ y
 y[4] <- "toto"
 y
 ```
+
 
 

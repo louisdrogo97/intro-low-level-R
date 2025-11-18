@@ -146,6 +146,90 @@ x
 x[c(2,10)] <-c(123,78)
 x
 ```
+## Lists
+vectors must be type uniform, which will trigger a conversation to character in many cases.
+```{r}
+broken <- c(1L, 1.5, "toto", FALSE)
+broken
+typeof(broken)
+```
+Lists do not have this limitation.
+### Creating a list
+
+```{r}
+bar <- list(1L, 1,5, "toto",FALSE)
+bar
+```
+```{r}
+typeof(bar)
+length(bar)
+```
+
+A list can be understood as a vector of vectors.
+```{r}
+foo <- list(c(1,2,3),TRUE,length)
+foo
+length(foo)
+```
+### Indexing
+```{r}
+foo
+cat('###\n')
+foo[1]
+cat('###\n')
+foo[-2]
+cat('###\n')
+foo[c(3,2,2,1)]
+```
+```{r}
+foo[0]
+foo[4]
+```
+```{r}
+NA ## Missing Value
+NULL ## missing object
+NaN ## Not a number
+```
+```{r}
+0/0
+1/0
+-1/0
+1/0-1/0
+1/0+1
+1/0-10e10
+1/Inf
+```
+```{r}
+NA_real_+1
+1/NA_real_
+```
+```{r}
+NULL+1
+1/NULL
+```
+## Back to indexing lists
+```{r}
+x <- list(c(1,2,3),c(TRUE,FALSE),LETTERS[10:15])
+x
+
+```
+
+```{r}
+x[c(1,4,5)]
+```
+
+```{r}
+x[5] <- list(c(-2,1))
+x
+```
+```{r}
+y <- c(1,2,3)
+y
+y[4] <- "toto"
+y
+```
+
+
 
 
 
