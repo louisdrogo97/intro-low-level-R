@@ -5,3 +5,89 @@ format: html
 editor: visual
 ---
 
+```{r}
+#| message: false
+library(here)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+here::i_am("intro-low-level-R.Rproj")
+```
+
+
+## Types and classes
+
+### Types
+
+```{r}
+typeof(1.5) # double
+typeof("test") # character
+typeof(TRUE) # logical
+typeof(1L) # integer
+typeof(1) # double
+typeof(typeof) # closure : it's a function essentially
+typeof(list()) # list
+```
+
+Every numbers are considered as double unless you specify it's an integer.
+
+
+### Classes
+
+```{r}
+data(iris)
+typeof(iris) # list
+class(iris) # data frame
+
+class(1) # numeric
+class(1L) # integer
+```
+## Vector
+
+### Introduction
+Many things in R are vectors (and most of the other things are lists).
+A vector is a collection of values of the same type (possibly a single value).
+
+```{r}
+w <- 15.25
+length(w)  # all vectors have a length
+w[1]
+```
+
+The c-function can be seen as a creation function or, more accurately, as a vector concatenation function.
+```{r}
+y <- c(1,-2,45,1.5,-1e-10)
+y
+typeof(y)
+y[2]
+length(y)
+```
+### Character vectors
+
+This is not R strength...
+
+```{r}
+z <- "alice"
+length(z)  # 1
+```
+Salvation comes from 'stringr' package.
+
+```{r}
+library(stringr)
+```
+
+```{r}
+str_length(z)  # 5
+```
+```{r}
+char <- "😂😂😇"
+str_length(char)
+```
+```{r}
+some_values <- c("😂😂😇", "test")
+some_values
+length(some_values) # length of the vector
+str_length(some_values) # length of each element in the vector
+```
+
