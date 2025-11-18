@@ -1,0 +1,80 @@
+---
+title: "Main doc"
+format: html
+---
+
+## Types and Classes
+### Types
+```{r}
+typeof(1.5)
+typeof("toto")
+typeof('also')
+typeof(TRUE)
+typeof(1L)
+typeof(1) 
+typeof(typeof)
+typeof(list())
+```
+
+### Classes 
+
+```{r}
+data(iris)
+typeof(iris)
+class(iris)
+```
+## Vectors
+### Introduction
+Many things in R are vectors (and most of the other things are lists).
+
+A vector is a collection of values of the same type (possibly a single value).
+
+```{r}
+x <- 15.25
+length(x) ## all vectors have length
+x[1]
+```
+```{r}
+length(length(x))
+typeof(length(x))
+```
+The 'c' function can be seen as a creation function or, more accurately, as a vector concatenation function.
+
+```{r}
+y <- c(1, -2, 45, 1.5, -1e-10)
+y
+typeof(y)
+y[2]
+length(y)
+```
+```{r}
+c(x,y)
+```
+### Character vectors
+
+This is not R strength...
+```{r}
+z <- "Alice"
+length(z)
+```
+Salvation comes from the 'sting' package.
+```{r}
+library(stringr)
+```
+```{r}
+str_length(z)
+```
+```{r}
+complicated <- "😂😊😒😁"
+complicated
+length(complicated)
+str_length(complicated)
+```
+```{r}
+some_values <-c("😂😊😒😁","R是一门很好的编程语言","alice")
+some_values
+length(some_values)
+str_length(some_values)
+str_to_upper(some_values)
+
+```
