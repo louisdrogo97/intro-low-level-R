@@ -78,3 +78,38 @@ str_length(some_values)
 str_to_upper(some_values)
 
 ```
+
+# Indexing
+
+```{r}
+x[1] <- 18
+x
+y
+```
+
+```{r}
+x
+x[c(2, 2, 1, 4, 3)]
+```
+
+```{r}
+x[0]
+
+typeof(numeric(0))
+length(numeric(0))
+
+typeof(NA)
+length(NA)
+```
+
+```{r}
+x
+x[c(1, 4)] <- c(-34, 42)
+x[c(2, 10)] <- c(123, 70)
+x
+
+y <- c("A", "B", "C")
+y
+y[c(TRUE, FALSE, TRUE)]
+```
+
