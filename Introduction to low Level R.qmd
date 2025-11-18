@@ -4,3 +4,24 @@ author: "Hao Xu"
 format: html
 ---
 
+## Types and Classes
+### Types
+```{r}
+typeof(1.5)
+typeof("toto")
+typeof('also')
+typeof(TRUE)
+typeof(1L)
+typeof(1) 
+typeof(typeof)
+typeof(list())
+```
+
+### Classes 
+
+```{r}
+data(iris)
+typeof(iris)
+class(iris)
+```
+
